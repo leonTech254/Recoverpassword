@@ -34,8 +34,16 @@
 
 	</div>
 	<div class="reset-passwrod-container">
+
+	
 		
 	<form action="" id="resetForm">
+	<div class="email-field">
+			<input type="email" name="" id="" placeholder="enter email">
+			<button type="button" id="sendEmail">send reset-code</button>
+	</div>
+	
+		
 	<div class="cancel">X</div>
 			<h3 class="form-t">reset password</h3>
 			
@@ -79,6 +87,16 @@ $(".login-container").slideDown(2000)
 
 
 })
+
+$("#sendEmail").click(()=>{
+$(".email-field").fadeOut(2000)
+
+// $(".login-container").slideDown(2000)
+
+
+})
+
+
 
 	
 </script>
