@@ -34,8 +34,44 @@
 .inputs input
 {
     padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     background: none;
     border: 1px solid black;
+    border-radius: 5px;
     
 }
+.display-errors
+{
+    color: red;
+    font-style: italic;
+    font-size: small;
+    text-align: center;
 
+}
+.display-errors::after
+{
+    content: '!!';
+}
+
+
+
+
+
+.reset-passwrod-container form
+{
+    border-radius: .5rem;
+    display: none;
+    margin-top: 100px;
+}
+
+.cancel
+{
+    text-align: right;
+    font-size: large;
+    font-weight: bold;
+    font-size: large;
+    color: red;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
