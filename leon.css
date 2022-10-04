@@ -4,7 +4,7 @@
     margin: none;
 }
 
-.btn-reset
+.btn-reset,.button button
 {
     display: block;
     width: 100%;
@@ -15,4 +15,27 @@
     background-color: orange;
     border: 1px solid orange;
     font-weight: bold;
+
 }
+
+.form-t
+{
+    text-transform: uppercase;
+    margin-bottom: .5rem;
+}
+
+
+.inputs
+{
+    display: flex;
+    flex-direction: column;
+    gap: .9rem;
+}
+.inputs input
+{
+    padding: 5px;
+    background: none;
+    border: 1px solid black;
+    
+}
+

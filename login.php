@@ -20,7 +20,7 @@
   	</div>
   	<div class="input-group">
   		<label>Password</label>
-  		<input type="password" name="password">
+  		<input type="passwords" name="password">
   	</div>
   	<div class="input-group">
   		<button type="submit" class="btn" name="login_user">Login</button>
@@ -34,8 +34,20 @@
 	</div>
 	<div class="reset-passwrod-container">
 		<form action="">
+			<h3 class="form-t">reset password</h3>
+			<div class="inputs">
 
+			<input type="text" placeholder="enter verification code">
+			<input type="password" placeholder="new password">
+			<input type="password" placeholder="confirm password">
+			
+
+			</div>
+			<div class="button">
+				<button type="submit">reset password</button>
+			</div>
 		
+
 		</form>
 
 
