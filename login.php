@@ -100,7 +100,7 @@ $("#sendEmail").click(()=>{
 	
 	)
 	
-// $(".email-field").fadeOut(2000)
+$(".email-field").fadeOut(2000)
 
 // $(".login-container").slideDown(2000)
 

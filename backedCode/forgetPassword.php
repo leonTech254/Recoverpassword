@@ -51,11 +51,15 @@ if ($user) { // if user exists
 
     }
     $code=strtoupper($resetCode);
+    $update="UPDATE RecoverCodes SET Used='yes' WHERE email='$userEmail'";
+
+    mysqli_query($db,$update);
+
     $insert_data="INSERT INTO RecoverCodes(resetCode,email) VALUES('$code','$userEmail')";
     mysqli_query($db,$insert_data);
     return $code;
     }
-    generateCode($db,$userEmail);
+    $code=generateCode($db,$userEmail);
     
 
     echo <<<_END
@@ -63,17 +67,21 @@ if ($user) { // if user exists
     <span>Send resent code to email:</span>
     <span>$userEmail</span>
     <button id='confirm-box'>yes?</button>
-            
-    
-    
     </div>
     <script>
     $('#confirm-box').click((e)=>{
         e.preventDefault();
         let base_url="http://127.0.0.1:5000"
-        $.post(`http://127.0.0.1:5000/send/email/recover`,{"data":"hello leon"})
+        $.ajax({
+            type: "POST",
+            url:`http://127.0.0.1:5000/send/email/recover`,
+            contentType : 'application/json',
+            async: false,
+            data:JSON.stringify({email:"$userEmail",code:"$code"})
+            
+            
+        })
     })
-    
     document.getElementById("confirm-box").click()
     
     </script>    
