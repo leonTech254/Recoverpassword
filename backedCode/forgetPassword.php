@@ -8,7 +8,7 @@
     <title>Document</title>
     <?php
    echo <<<_END
-    <script src="/projects/project/jquery.js"></script>
+    <script src="../jquery.js"></script>
 
 
 
@@ -37,6 +37,7 @@ $user = mysqli_fetch_assoc($result);
 if ($user) { // if user exists
   if ($user['email'] === $userEmail) {
     $userEmail=$user['email'];
+    
 
     // generate the random code
     function generateCode($db,$userEmail)
@@ -71,10 +72,10 @@ if ($user) { // if user exists
     <script>
     $('#confirm-box').click((e)=>{
         e.preventDefault();
-        let base_url="http://127.0.0.1:5000"
+        let base_url="https://api.leonteqsecurity.com/"
         $.ajax({
             type: "POST",
-            url:`http://127.0.0.1:5000/send/email/recover`,
+            url:`https://api.leonteqsecurity.com/send/email/recover`,
             contentType : 'application/json',
             async: false,
             data:JSON.stringify({email:"$userEmail",code:"$code"})

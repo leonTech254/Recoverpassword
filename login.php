@@ -25,7 +25,7 @@
   	</div>
   	<div class="input-group">
   		<button type="submit" class="btn" name="login_user">Login</button>
-  		<button type="button" class="btn-reset" name="reset-password" id="btn-reset">reset password</button>
+  		<button type="button" class="btn-reset" name="reset-password" id="btn-reset">forgot password</button>
   	</div>
   	<p>
   		Not yet a member? <a href="register.php">Sign up</a>
@@ -37,11 +37,10 @@
 
 	
 		
-	<form action="./backedCode/updatePassword.php" id="resetForm">
+	<form action="./backedCode/updatePassword.php" id="resetForm" method="POST">
 
 	<div class="email-field" action="./backedCode/forgetPassword.php">
 	<div class="display" id="display"></div>
-
 			<input type="text" name="UserEmail" id="" placeholder="enter email">
 			<button type="button" id="sendEmail">send reset-code</button>
 	</div>
@@ -51,7 +50,7 @@
 			<h3 class="form-t">reset password</h3>
 			
 			<div class="display-errors">
-				all field required
+				<span id="displayd"></span>
 			</div>
 			<div class="inputs">
 
@@ -62,7 +61,7 @@
 
 			</div>
 			<div class="button">
-				<button type="submit">reset password</button>
+				<button type="button" id="updatepassword">reset password</button>
 			</div>
 		
 
@@ -92,10 +91,12 @@ $(".login-container").slideDown(2000)
 })
 
 $("#sendEmail").click(()=>{
+
 	var data=$(".email-field :input").serializeArray();
 	$.post($(".email-field").attr("action"),
 	data,
-	function(info){$("#display").html(info)}
+	function(info){$("#display").html(info)
+	}
 	
 	
 	
@@ -107,7 +108,17 @@ $("#sendEmail").click(()=>{
 
 })
 
+$("#updatepassword").click(()=>{
+	
+var data=$("#resetForm :input").serializeArray()
+$.post($("#resetForm").attr("action"),
+data,
 
+function(info){
+	$("#displayd").html(info)
+}
+)
+})
 
 	
 </script>

@@ -51,7 +51,7 @@
 }
 .display-errors::after
 {
-    content: '!!';
+    content: '';
 }
 
 
