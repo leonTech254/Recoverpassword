@@ -83,6 +83,9 @@ if ($user) { // if user exists
         })
     })
     document.getElementById("confirm-box").click()
+    $(".email-field").fadeOut(2000)
+    
+
     
     </script>    
     _END;
@@ -144,6 +147,7 @@ else
 }
 </style>
 <script>
+   
 
 </script>
     

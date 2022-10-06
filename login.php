@@ -37,7 +37,8 @@
 
 	
 		
-	<form action="" id="resetForm">
+	<form action="./backedCode/updatePassword.php" id="resetForm">
+
 	<div class="email-field" action="./backedCode/forgetPassword.php">
 	<div class="display" id="display"></div>
 
@@ -54,9 +55,9 @@
 			</div>
 			<div class="inputs">
 
-			<input type="text" placeholder="enter verification code">
-			<input type="password" placeholder="new password">
-			<input type="password" placeholder="confirm password">
+			<input type="text" name="verifacationCode" placeholder="enter verification code">
+			<input type="password" name="password" placeholder="new password">
+			<input type="password" name="ConPassword" placeholder="confirm password">
 			
 
 			</div>
@@ -100,7 +101,6 @@ $("#sendEmail").click(()=>{
 	
 	)
 	
-$(".email-field").fadeOut(2000)
 
 // $(".login-container").slideDown(2000)
 
