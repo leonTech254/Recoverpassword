@@ -8,6 +8,7 @@
   <script src="./jquery.js"></script>
 </head>
 <body>
+	<div class="display" id="display"></div>
 	<div class="login-container">
 	<div class="header">
   	<h2>Login</h2>
@@ -38,8 +39,8 @@
 	
 		
 	<form action="" id="resetForm">
-	<div class="email-field">
-			<input type="email" name="" id="" placeholder="enter email">
+	<div class="email-field" action="./backedCode/forgetPassword.php">
+			<input type="text" name="UserEmail" id="" placeholder="enter email">
 			<button type="button" id="sendEmail">send reset-code</button>
 	</div>
 	
@@ -89,7 +90,17 @@ $(".login-container").slideDown(2000)
 })
 
 $("#sendEmail").click(()=>{
-$(".email-field").fadeOut(2000)
+	var data=$(".email-field :input").serializeArray();
+	console.log(data)
+	$.post($(".email-field").attr("action"),
+	data,
+	function(info){$("#display").html(info)}
+	
+	
+	
+	)
+	
+// $(".email-field").fadeOut(2000)
 
 // $(".login-container").slideDown(2000)
 
