@@ -73,11 +73,11 @@ if (isset($_POST['reg_user'])) {
   
       }
       $regNo="INTE/MG/".$resetCode."/09/19";
-      echo $regNo;
+   
   
   
       echo <<<_END
-      leon
+
       <script src='./jquery.js'></script>
       <div>
       <button id='confirm-box'></button>
