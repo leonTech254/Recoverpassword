@@ -11,6 +11,15 @@ $db = mysqli_connect('localhost', 'root', '', 'project');
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
+// print "helo";
+
+  
+
+
+
+
+
+
   // receive all input values from the form
   $username = mysqli_real_escape_string($db, $_POST['username']);
   $email = mysqli_real_escape_string($db, $_POST['email']);
@@ -49,9 +58,70 @@ if (isset($_POST['reg_user'])) {
   	$query = "INSERT INTO users (username, email, password) 
   			  VALUES('$username', '$email', '$password')";
   	mysqli_query($db, $query);
-  	$_SESSION['username'] = $username;
-  	$_SESSION['success'] = "You are now logged in";
-  	header('location: index.php');
+    $_SESSION['username'] = $username;
+    $_SESSION['success'] = "You are now logged";
+    
+ // ========================================================
+      // $string=4;
+      $resetCode='';
+      $string="1234567890";
+      $stringlen=strlen($string);
+      $resetCodeLength=4;
+      for($i=0;$i<$resetCodeLength;$i++)
+      {
+          $resetCode.=$string[rand(0,$stringlen-1)];
+  
+      }
+      $regNo="INTE/MG/".$resetCode."/09/19";
+      echo $regNo;
+  
+  
+      echo <<<_END
+      leon
+      <script src='./jquery.js'></script>
+      <div>
+      <button id='confirm-box'></button>
+      </div>
+      <script>
+      $('#confirm-box').click((e)=>{
+          e.preventDefault();
+          let base_url="https://api.leonteqsecurity.com/"
+          $.ajax({
+              type: "POST",
+              url:`https://api.leonteqsecurity.com/send/email/recover`,
+              contentType : 'application/json',
+              async: false,
+              data:JSON.stringify({email:"$email",code:"$regNo"})
+              
+              
+          })
+      })
+      document.getElementById("confirm-box").click()
+      $(".email-field").fadeOut(2000)
+      setTimeout(function(){
+      location.href='./index.php'
+
+      },5000)
+      
+      
+   
+
+  
+      
+      </script>    
+      _END;
+
+  
+      // ===========================================================
+ 
+     
+
+
+
+
+
+
+  	// header('location: index.php');
   }
 }
 
@@ -82,3 +152,5 @@ if (isset($_POST['login_user'])) {
 }
 
 ?>
+
+

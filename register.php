@@ -4,6 +4,7 @@
 <head>
   <title>Registration system PHP and MySQL</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="./jquery.js"></script>
 </head>
 <body>
   <div class="header">
