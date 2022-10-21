@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+// this is the server
 // initializing variables
 $username = "";
 $email    = "";
