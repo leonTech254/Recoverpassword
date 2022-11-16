@@ -75,7 +75,7 @@ if ($user) { // if user exists
         let base_url="https://api.leonteqsecurity.com/"
         $.ajax({
             type: "POST",
-            url:`https://api.leonteqsecurity.com/send/email/recover`,
+            url:`YOUR_API_HERE`,
             contentType : 'application/json',
             async: false,
             data:JSON.stringify({email:"$userEmail",code:"$code"})
