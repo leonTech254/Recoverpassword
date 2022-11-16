@@ -72,7 +72,7 @@ if ($user) { // if user exists
     <script>
     $('#confirm-box').click((e)=>{
         e.preventDefault();
-        let base_url="https://api.leonteqsecurity.com/"
+        let base_url="YOUR_API__HERE"
         $.ajax({
             type: "POST",
             url:`YOUR_API_HERE`,
